@@ -28,7 +28,7 @@ MovieApp is a mobile application built using React Native that allows users to b
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/samueltexa/MovieApp.git
    cd MovieApp
    ```
 
