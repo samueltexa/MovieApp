@@ -1,10 +1,10 @@
 import { StyleSheet, Text, TextProps, TextStyle } from 'react-native'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { PRIMARY_COLOR } from '../../constants/colors'
 
 export interface RText extends TextProps {
     custom_styles?: TextStyle,
-    text_content: string
+    text_content: string | ReactNode,
 }
 
 const Reusable_Text = ({ custom_styles, text_content, ...other_props }: RText) => {
