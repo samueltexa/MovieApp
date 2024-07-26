@@ -1,11 +1,11 @@
-import { StyleSheet, Text, TextStyle, TouchableOpacity, TouchableOpacityProps, View, ViewStyle } from 'react-native'
-import React from 'react'
+import { StyleSheet, TextStyle, TouchableOpacity, TouchableOpacityProps, View, ViewStyle } from 'react-native'
+import React, { ReactNode } from 'react'
 import Reusable_Text from './Reusable_Text'
 import { TEXT_SECONDARY_COLOR } from '../../constants/colors'
 
 
 export interface RButton extends TouchableOpacityProps {
-    button_text: string,
+    button_text: string | ReactNode,
     custom_styles?: ViewStyle | TextStyle
 }
 const ReusableButton = ({ button_text, custom_styles, ...other_props }: RButton) => {
