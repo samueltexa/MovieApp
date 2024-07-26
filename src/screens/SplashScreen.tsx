@@ -26,7 +26,7 @@ const SplashScreen = ({ navigation }: { navigation: any }) => {
 
     return (
         <ScreenWrapper custom_styles={styles.splash_wrapper}>
-            <Image style={styles.image_rapper} source={require('../assets/logo/logo.png')} />
+            <Image style={styles.image_rapper} source={require('../assets/logo/logo.webp')} />
             <Reusable_Text custom_styles={{ fontSize: 40, color: TEXT_SECONDARY_COLOR }} text_content='Movie Studio'></Reusable_Text>
         </ScreenWrapper>
     )
