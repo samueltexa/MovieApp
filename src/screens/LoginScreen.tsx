@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import ScreenWrapper from '../components/reusable/ScreenWrapper'
 import ReusableImage from '../components/reusable/ReusableImage'
@@ -16,11 +16,13 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
     const [email_error, setEmailError] = useState('')
     const [password_error, setPasswordError] = useState('')
+    const [isLoading, setIsLoading] = useState(false);
 
     // Validations
     const handleLogin = async () => {
+        setIsLoading(true)
+
         let isValid = true;
-        setIsLoading(true);
 
         // username validation
         if (username) {
@@ -46,12 +48,14 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             } else if (password.length >= 16) {
                 setPasswordError('Maximum characters 15');
                 isValid = false;
+                setIsLoading(false)
             } else {
                 setPasswordError('');
             }
         } else {
             setPasswordError('Password is required');
             isValid = false;
+            setIsLoading(false)
         }
 
         if (isValid) {
@@ -60,6 +64,8 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
                 navigation.replace('BottomTabsNavigator')
             } catch (error) {
                 console.error('Failed to save the user data', error);
+            } finally {
+                setIsLoading(false)
             }
             // const userDetails = {
             //     username,
@@ -72,8 +78,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
     }
 
 
-    const local_image = '../assets/logo/logo.png'
-    const [isLoading, setIsLoading] = useState(false);
+    const local_image = '../assets/logo/logo.webp'
     return (
         <ScreenWrapper isScrollable custom_styles={{ backgroundColor: SECONDARY_COLOR, gap: 30 }}>
             <ReusableImage image_url={require(local_image)} />
@@ -87,7 +92,9 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
                 {password_error ? <Text style={styles.error_message}>{password_error}</Text> : null}
             </View>
             <Reusable_Text onPress={() => navigation.navigate('ForgotPassword')} custom_styles={{ color: TEXT_SECONDARY_COLOR, textDecorationLine: 'underline' }} text_content='Forgot password?'></Reusable_Text>
-            <ReusableButton onPress={handleLogin} button_text='Login'></ReusableButton>
+            <ReusableButton onPress={handleLogin} button_text={isLoading ? <ActivityIndicator/> : 'Login'} disabled={isLoading}>
+
+            </ReusableButton>
             <View style={{ flexDirection: 'row', gap: 5 }}>
                 <Reusable_Text text_content='Dont have an account?'></Reusable_Text>
                 <Reusable_Text onPress={() => navigation.navigate('RegisterScreen')} custom_styles={{ color: TEXT_SECONDARY_COLOR, textDecorationLine: 'underline' }} text_content='Register'></Reusable_Text>
