@@ -29,15 +29,18 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             if (username.length <= 4) {
                 setEmailError('Too short');
                 isValid = false;
+                setIsLoading(false)
             } else if (username.length >= 31) {
                 setEmailError('Maximum characters 30');
                 isValid = false;
+                setIsLoading(false)
             } else {
                 setEmailError('');
             }
         } else {
             setEmailError('Email or username is required');
             isValid = false;
+            setIsLoading(false)
         }
 
         // Password Validation
@@ -45,6 +48,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             if (password.length <= 4) {
                 setPasswordError('Too short');
                 isValid = false;
+                setIsLoading(false)
             } else if (password.length >= 16) {
                 setPasswordError('Maximum characters 15');
                 isValid = false;
