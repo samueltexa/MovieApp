@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, FlatList, Image, Modal } from 'react-native';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
 
 const FavoritesScreen = () => {
   const [movieData, setMovieData] = useState([]);
@@ -8,7 +8,7 @@ const FavoritesScreen = () => {
 
   const fetchMovieData = async () => {
     try {
-      const response = await fetch("http://www.omdbapi.com/?s=batman&apikey=3a40af28");
+      const response = await fetch("http://www.omdbapi.com/?s=superman&apikey=3a40af28");
       const data = await response.json();
       if (data.Response === "True") {
         setMovieData(data.Search);
@@ -20,7 +20,7 @@ const FavoritesScreen = () => {
     }
   };
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item}:{item:any} ) => (
     <View style={styles.itemContainer}>
       <TouchableOpacity onPress={() => setSelectedMovie(item)}>
         <Image
@@ -50,7 +50,7 @@ const FavoritesScreen = () => {
         animationType="slide"
         onRequestClose={() => setSelectedMovie(null)}
       >
-        <View style={styles.modalContainer}>
+        {/* <View style={styles.modalContainer}>
           {selectedMovie && (
             <Video
               source={{ uri: 'https://path/to/your/video.mp4' }} // Replace with the actual video URL
@@ -62,7 +62,7 @@ const FavoritesScreen = () => {
           <TouchableOpacity onPress={() => setSelectedMovie(null)} style={styles.closeButton}>
             <Text style={styles.closeButtonText}>Close</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </Modal>
     </View>
   );
