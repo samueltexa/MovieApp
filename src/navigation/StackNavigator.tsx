@@ -9,13 +9,16 @@ import RegisterScreen from '../screens/RegisterScreen';
 import ForgotPassword from '../screens/ForgotPassword';
 import SuccessfullRegistration from '../screens/SuccessfullRegistration';
 import BottomTabsNavigator from './BottomTabsNavigator';
+import AccountScreen from '../screens/AccountScreen';
+import { TEXT_SECONDARY_COLOR } from '../constants/colors';
+import ProfileScreen from '../screens/ProfileScreen';
 
 
 const MainStack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <MainStack.Navigator screenOptions={{ header: () => null }} initialRouteName='SplashScreen'>
+    <MainStack.Navigator screenOptions={{ headerShown: false }} initialRouteName='SplashScreen'>
       <MainStack.Screen name='SplashScreen' component={SplashScreen} />
       <MainStack.Screen name='HomeScreen' component={HomeScreen} />
       <MainStack.Screen name='WelcomeScreen' component={WelcomeScreen} />
@@ -24,6 +27,24 @@ const StackNavigator = () => {
       <MainStack.Screen name='ForgotPassword' component={ForgotPassword} />
       <MainStack.Screen name='SuccessfullRegistration' component={SuccessfullRegistration} />
       <MainStack.Screen name='BottomTabsNavigator' component={BottomTabsNavigator} />
+      <MainStack.Screen options={{
+        headerShown: true,
+        title: 'Profile',
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: TEXT_SECONDARY_COLOR,
+        },
+      }} name='ProfileScreen' component={ProfileScreen} />
+      <MainStack.Screen
+        options={{
+          headerShown: true,
+          title: 'Account',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: TEXT_SECONDARY_COLOR,
+          },
+        }}
+        name='AccountScreen' component={AccountScreen} />
     </MainStack.Navigator>
   )
 }
