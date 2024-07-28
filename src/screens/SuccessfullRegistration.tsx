@@ -1,9 +1,10 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ScreenWrapper from '../components/reusable/ScreenWrapper'
 import ReusableImage from '../components/reusable/ReusableImage'
 import { SECONDARY_COLOR, TEXT_SECONDARY_COLOR } from '../constants/colors'
 import Reusable_Text from '../components/ui_components/Reusable_Text'
+import Container from '../components/reusable/Container'
 
 const SuccessfullRegistration = ({ navigation }: { navigation: any }) => {
     const local_image = '../assets/logo/logo.webp'
@@ -13,6 +14,10 @@ const SuccessfullRegistration = ({ navigation }: { navigation: any }) => {
             <Reusable_Text custom_styles={{ fontSize: 30 }} text_content='Congragulations'></Reusable_Text>
             <View style={{ alignContent: 'center' }}>
                 <Reusable_Text custom_styles={{}} text_content='Your new account has been created'></Reusable_Text>
+
+                <Container>
+                    <Text>Testing</Text>
+                </Container>
                 <View style={{ flexDirection: 'row', gap: 5 }}>
                     <Reusable_Text custom_styles={{}} text_content='you can now, '></Reusable_Text>
                     <Reusable_Text onPress={() => navigation.navigate('LoginScreen')}
