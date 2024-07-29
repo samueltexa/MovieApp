@@ -8,7 +8,7 @@ const FavoritesScreen = () => {
 
   const fetchMovieData = async () => {
     try {
-      const response = await fetch("http://www.omdbapi.com/?s=batman&apikey=3a40af28");
+      const response = await fetch("http://www.omdbapi.com/?s=ironman&apikey=3a40af28");
       const data = await response.json();
       if (data.Response === "True") {
         setMovieData(data.Search);
