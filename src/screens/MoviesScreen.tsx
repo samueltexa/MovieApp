@@ -14,8 +14,8 @@ const MoviesScreen = ({navigation}:{navigation:any}) => {
   },[navigation]);
 
   return (
-    <<View>
-    </View>>
+    <View>
+    </View>
   )
 }
 
