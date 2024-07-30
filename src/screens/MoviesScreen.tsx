@@ -14,9 +14,8 @@ const MoviesScreen = ({navigation}:{navigation:any}) => {
   },[navigation]);
 
   return (
-    <Reusable_TextInput>
-      
-    </Reusable_TextInput>>
+    <<View>
+    </View>>
   )
 }
 
