@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, FlatList, Image, Modal } from 'react-native';
-// import Video from 'react-native-video';
 
 const FavoritesScreen = () => {
   const [movieData, setMovieData] = useState([]);
