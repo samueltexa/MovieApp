@@ -49,19 +49,6 @@ const FavoritesScreen = () => {
         animationType="slide"
         onRequestClose={() => setSelectedMovie(null)}
       >
-        {/* <View style={styles.modalContainer}>
-          {selectedMovie && (
-            <Video
-              source={{ uri: 'https://path/to/your/video.mp4' }} // Replace with the actual video URL
-              style={styles.video}
-              controls={true}
-              resizeMode="contain"
-            />
-          )}
-          <TouchableOpacity onPress={() => setSelectedMovie(null)} style={styles.closeButton}>
-            <Text style={styles.closeButtonText}>Close</Text>
-          </TouchableOpacity>
-        </View> */}
       </Modal>
     </View>
   );
