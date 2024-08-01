@@ -22,7 +22,7 @@ const AccountScreen = ({ navigation }: { navigation: any }) => {
       } else if (response.errorMessage) {
         console.log('ImagePicker Error: ', response.errorMessage);
       } else {
-        console.log('Image selected: ', response);
+        console.log('Image se: ', response);
       }
     });
   };
