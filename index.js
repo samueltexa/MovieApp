@@ -1,4 +1,3 @@
-import './gesture-handler';
 /**
  * @format
  */
