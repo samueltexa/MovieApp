@@ -83,7 +83,7 @@ MovieApp/
 │   ├── AppNavigator.js
 │   ├── RootNavigator.js
 │   └── ...
-├── redux/               # Redux setup (if used)
+├── redux/
 │   ├── actions/
 │   ├── reducers/
 │   └── store.js
